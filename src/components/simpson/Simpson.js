@@ -1,4 +1,4 @@
-export default function Simpson(name, surname, age, info, image) {
+export default function Simpson({name, surname, age, info, image}) {
     return (
         <div>
             <h2>{name} {surname}. Age - {age}</h2>
