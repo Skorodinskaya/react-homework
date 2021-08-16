@@ -1,8 +1,9 @@
-export default function App() {
-  return (
-    <div>
-    App
+import Form from "./components/forms/Form";
 
-    </div>
-  );
+export default function App() {
+    return (
+        <div>
+            <Form/>
+        </div>
+    );
 }
