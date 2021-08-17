@@ -27,6 +27,6 @@ export default function Form() {
 
             <Cars/>
 
-        < /div>
+        </div>
     );
 }
