@@ -19,9 +19,9 @@ export default function Form() {
     return (
         <div>
             <form onSubmit={save}>
-                <input type="text" name={'model'} value={formState.model} maxLength={20} onChange={onFormInputChange}/>
-                <input type="text" name={'price'} value={formState.price} min = {0} onChange={onFormInputChange}/>
-                <input type="text" name={'year'} value={formState.year} min ={1990} max ={2021} onChange={onFormInputChange}/>
+                <input type="text" name={'model'} value={formState.model} maxLength={20} onInput={onFormInputChange}/>
+                <input type="text" name={'price'} value={formState.price} min = {0} onInput={onFormInputChange}/>
+                <input type="number" name={'year'} value={formState.year} min={1990} max ={2021} onInput={onFormInputChange}/>
                 <input type="submit"/>
             </form>
 
