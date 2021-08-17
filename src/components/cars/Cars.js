@@ -9,7 +9,7 @@ export default function Cars() {
     })
   return (
     <div>
-        {car.map(value => <Car key = {value} item = {value}/>)}
+        {car.map(value => <Car key={value.id} item={value}/>)}    {/*в key клади id*/}
 
     </div>
   );
