@@ -6,10 +6,10 @@ export default function Cars() {
     let [car, setCar] = useState([]);
     useEffect(() => {
         getCars().then(value => setCar([...value]))
-    })
+    }, [])    // не вказала []
   return (
     <div>
-        {car.map(value => <Car key = {value} item = {value}/>)}
+        {car.map(value => <Car key={value.id} item={value}/>)}    {/*в key клади id*/}
 
     </div>
   );
