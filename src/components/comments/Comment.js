@@ -1,6 +1,6 @@
 export default function Comment({item}) {
   return (
-    <div>
+    <div className={'wrapper'}>
       {item.id}. {item.body}
 
     </div>

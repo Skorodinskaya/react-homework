@@ -1,3 +1,4 @@
+import './App.css'
 import {
     BrowserRouter as Router,
     Switch,
@@ -13,11 +14,10 @@ export default function App() {
     return (
         <Router>
             <div>
-                <Link to={'/users-page'}> to users page</Link>
-                <br/>
-                <Link to={'/posts-page'}>to posts page</Link>
-                <br/>
-                <Link to={'/comments-page'}>to comments page</Link>
+                <div className={'wrap'}><Link to={'/users-page'}>Page with users</Link>
+                    <Link to={'/posts-page'}>Page with posts</Link>
+                    <Link to={'/comments-page'}>Page with comments</Link>
+                </div>
 
                 <Route path={'/users-page'} component={Users}/>
                 <Route path={'/posts-page'} component={Posts}/>

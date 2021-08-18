@@ -1,0 +1,11 @@
+.wrap {
+    background: #adc7ff;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.wrap a {
+    background: #93e0d3;
+    margin: 20px;
+}
