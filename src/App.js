@@ -1,8 +1,22 @@
-export default function App() {
-  return (
-    <div>
-    App
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    withRouter
+} from "react-router-dom";
+import Users from "./components/Users";
 
-    </div>
-  );
+export default function App() {
+    return (
+        <Router>
+            <div>
+                <Link to = {'/home'}>Home</Link>
+                <br/>
+                <Link to={'/users'}>Users page</Link>
+            </div>
+            <Route path={'/home'}/>
+            <Route path={'/users'} component={Users}/>
+        </Router>
+    );
 }
