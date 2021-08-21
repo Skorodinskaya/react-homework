@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getUser} from "../services/api.service";
+import {getUser} from "../../services/api.service";
 
 export default function UserDetails(props) {
     let {match: {params: {id}}} = props;
