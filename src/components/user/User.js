@@ -4,7 +4,7 @@ export default function User({item, userButton}) {
   }
   return (
     <div>
-        {item.id}. {item.name}
+        {item.id}. {item.name} - {item.username}
       <button onClick={userBtn}>Details</button>
 
     </div>

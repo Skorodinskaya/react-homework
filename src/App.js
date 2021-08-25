@@ -6,6 +6,8 @@ import {
     withRouter
 } from "react-router-dom";
 import Users from "./components/users/Users";
+import FormCreate from "./components/forms/FormCreate";
+import FormUpdate from "./components/forms/FormUpdate";
 
 export default function App() {
     return (
@@ -20,6 +22,8 @@ export default function App() {
                 <Link to={'/update-user'}>Update user</Link>
 
                 <Route path={'/users'} component={Users}/>
+                <Route path={'/create-user'} component={FormCreate}/>
+                <Route path={'/update-user'} component={FormUpdate}/>
             </div>
         </Router>
     );
