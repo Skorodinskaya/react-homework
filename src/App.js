@@ -13,8 +13,10 @@ export default function App() {
     return (
         <div>
             <h1>Object 1 - {a} </h1>
-            <button onClick={() => dispatch({obj: '1', act: '+'})}>Increase</button>
-            <button onClick={() => dispatch({obj: '1', act: '-'})}>Decrease</button>
+            <button onClick={() => dispatch({obj: 10, act: '+'})}>Increase 10</button>
+            <button onClick={() => dispatch({obj: 1, act: '+'})}>Increase</button>
+            <button onClick={() => dispatch({obj: 1, act: '-'})}>Decrease</button>
+            <button onClick={() => dispatch({obj: 10, act: '-'})}>Decrease 10</button>
         </div>
     );
 }
