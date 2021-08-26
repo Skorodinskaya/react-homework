@@ -1,19 +1,8 @@
-let url = 'https://jsonplaceholder.typicode.com/';
+const url = '/api/v1/cars/api/v1/cars';
 
-const getUsers = () => {
-    return fetch(url + 'users')
+const getCars = () => {
+    return fetch (url)
         .then(value => value.json())
 }
 
-const getPosts = () => {
-    return fetch(url + 'posts')
-        .then(value => value.json())
-}
-
-const getComments = () => {
-  return fetch(url + 'comments')
-      .then(value => value.json())
-}
-
-export {getUsers, getPosts, getComments}
-
+export {getCars}
