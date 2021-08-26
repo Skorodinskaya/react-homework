@@ -6,7 +6,7 @@ const getCars = () => {
 }
 
 const addCar = (car) => {
-    fetch('https://jsonplaceholder.typicode.com/posts', {
+    fetch(url, {
         method: 'POST',
         body: JSON.stringify(car),
         headers: {
@@ -17,4 +17,16 @@ const addCar = (car) => {
         .then((json) => console.log(json));
 }
 
-export {getCars, addCar}
+const updateCar = (car) => {
+    fetch(url + '/' + car.id, {
+        method: 'POST',
+        body: JSON.stringify(car),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+}
+
+export {getCars, addCar, updateCar}
