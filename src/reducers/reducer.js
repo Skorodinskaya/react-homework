@@ -1,8 +1,8 @@
 const reducer = (state, action) => {
-    if (action.obj === '1' && action.act === '+') {
-        return {...state, a: state.a+=5}
-    } else if (action.obj === '1' && action.act === '-') {
-        return {...state, a: state.a-=1}
+    if (action.act === '+') {
+        return {...state, a: state.a + action.obj}
+    } else if (action.act === '-') {
+        return {...state, a: state.a - action.obj}
     }
     return {...state}
 }
