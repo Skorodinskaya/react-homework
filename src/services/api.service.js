@@ -12,8 +12,7 @@ const addUser = (user) => {
             'Content-type': 'application/json; charset=UTF-8',
         },
     })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then(value => value.json())
 }
 
 export {getUsers, addUser}

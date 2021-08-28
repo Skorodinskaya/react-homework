@@ -1,4 +1,4 @@
 import {createStore} from "redux";
-import {rootReducer} from "../reducers/rootReducer";
+import {reducer} from "../reducers";
 
-export let store = createStore(rootReducer);
+export let store = createStore(reducer);
