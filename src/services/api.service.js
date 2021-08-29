@@ -19,7 +19,7 @@ const addCar = (car) => {
 
 const updateCar = (car) => {
     fetch(url + '/' + car.id, {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify(car),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
@@ -29,4 +29,11 @@ const updateCar = (car) => {
         .then((json) => console.log(json));
 }
 
-export {getCars, addCar, updateCar}
+const deleteCar = (id) => {
+    fetch(url + '/' + id, {
+        method: 'DELETE'
+    })
+        .then()
+}
+
+export {getCars, addCar, updateCar, deleteCar}

@@ -1,28 +1,29 @@
 import {useState} from "react";
-import {addCar, updateCar} from "../../services/api.service";
-import Cars from "../cars/Cars";
+import {updateCar} from "../../services/api.service";
+import CarsForEdit from "../cars/CarsForEdit";
 
 export default function FormUpdate() {
-    const [updateState, setUpdateState] = useState({model: '', price: '', year: ''})
-    const updateChange = (e) => {
-        setUpdateState({...updateState, [e.target.name]: e.target.value})
-    }
-    const edit = (e) => {
-        e.preventDefault()
-        updateState.id
-            ? updateCar(updateState)
-            : addCar(updateState)
-    }
+    const [editCar, setEditCar] = useState({model: '', price: '', year: ''})
 
+    let onChangeEditCar = (e) => {
+        setEditCar({...editCar, [e.target.name]: e.target.value});
+    };
+
+    const edit = (e) => {
+        e.preventDefault();
+        editCar.id
+            ? updateCar(editCar)
+            : updateCar(editCar)
+    }
     return (
         <div>
             <form onSubmit={edit}>
-                <input type={'text'} name={'model'} value={updateState.model} onChange={updateChange}/>
-                <input type={'number'} name={'price'} value={updateState.price} onChange={updateChange}/>
-                <input type={'number'} name={'year'} value={updateState.year} onChange={updateState}/>
+                <input type={'text'} name={'model'} value={editCar.model} onChange={onChangeEditCar}/>
+                <input type={'number'} name={'price'} value={editCar.price} onChange={onChangeEditCar}/>
+                <input type={'number'} name={'year'} value={editCar.year} onChange={onChangeEditCar}/>
                 <input type={'submit'}/>
             </form>
-            <Cars/>
+            <CarsForEdit editButton={setEditCar}/>
         </div>
     );
 }
