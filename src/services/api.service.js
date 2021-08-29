@@ -4,6 +4,7 @@ const getUsers = () => {
     return fetch(url)
         .then(value => value.json())
 }
+
 const addUser = (user) => {
     return fetch(url, {
         method: 'POST',

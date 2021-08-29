@@ -1,50 +1,46 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {addUser, getUsers} from "./services/api.service";
-import {fetchUsers, pushUsers} from "./redux/actions";
+import {deleteUsers, fetchUsers} from "./redux/actions";
+import {newUser} from "./redux/actions/actions";
 
 export default function App() {
-    let state = useSelector(state => {
-        console.log(state)
-       let {rootReducer} = state;
-        return rootReducer;
-    });
-    let dispatch = useDispatch();
-    let {users} = state;
+    const state = useSelector(state => {
+        const {firstReducer} = state;
+        return firstReducer;
+    })
 
-    useEffect(() => {
-        getUsers().then(value => {
-            dispatch(fetchUsers(value));
-        });
-    }, []);
-    let onSubmit = (e) => {
+    const dispatch = useDispatch();
+    const {users} = state;
+
+    useEffect(()=> {
+        getUsers().then(value => dispatch(fetchUsers(value)))
+    }, [])
+    const onSubmit = (e) => {
         e.preventDefault();
-        let name = e.target.name.value;
-        let user = {name};
-        addUser(user).then(value => {
-            console.log('saved user -', value)
-            dispatch(pushUsers(value))
-        })
-    }
-    // let onClickClearState = () => {
-    //   dispatch({type: 'CLEAR_STORE'})
-    // };
-    // let onClickSetState= () => {
-    //   getUsers().then(value => dispatch({type:'GET_USERS', payload: value}))
-    // };
-    return (
-        <div>
-            <form onSubmit={onSubmit}>
-                <input type="text" name={'name'}/>
-                <button>add user</button>
-            </form>
-            {/*<button onClick={onClickClearState}>Clear users</button>*/}
-            {/*<hr/>*/}
-            {/*<button onClick={onClickSetState}>Set users</button>*/}
-            {/*<hr/>*/}
+        const name = e.target.name.value;
+        const user = {name};
+        addUser(user).then(value => {dispatch(newUser(value))})
+    };
+    const onClickDeleteUsers = (value) => {
+        return (dispatch(deleteUsers(value)))
+    };
 
-            {users.map((value) => <div key={value.id}>{value.name}</div>)
-            }
-        </div>
-    );
+    const onClickGetUsers = () => {
+        getUsers().then(value => {dispatch(fetchUsers(value))})
+    };
+    return (
+    <div>
+        <form onSubmit={onSubmit}>
+            <input type={'text'} name = 'name'/>
+            <button>Add user</button>
+        </form>
+
+        {users.map((value) => <div key = {value.id}>{value.name}</div>)}
+
+        <button onClick={onClickDeleteUsers}>Delete users</button>
+        <button onClick={onClickGetUsers}>Get users</button>
+
+    </div>
+  );
 }

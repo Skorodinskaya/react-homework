@@ -1,7 +1,7 @@
-import {rootReducer} from "./rootReducer";
-import {someReducer} from "./someReducer";
-import {combineReducers} from 'redux';
+import {firstReducer} from "./firstReducer";
+import {secondReducer} from "./secondReducer";
+import {combineReducers} from 'redux'
 
-const reducer = combineReducers({someReducer, rootReducer})
+const reducer = combineReducers ({firstReducer, secondReducer})
 
 export {reducer}

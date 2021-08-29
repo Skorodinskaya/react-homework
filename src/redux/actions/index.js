@@ -1,6 +1,4 @@
-import {GET_USERS, PUSH_USER, CLEAR_STORE} from "./actionTypes";
-import {fetchUsers, pushUsers} from "./actions";
+import {GET_USERS, DELETE_USERS, ADD_USER} from "./actionTypes";
+import {fetchUsers, deleteUsers, newUser} from "./actions";
 
-export {
-    GET_USERS, PUSH_USER, CLEAR_STORE, fetchUsers, pushUsers
-}
+export {GET_USERS, fetchUsers, deleteUsers, newUser, DELETE_USERS, ADD_USER}
