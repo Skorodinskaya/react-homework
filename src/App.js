@@ -1,17 +1,12 @@
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
-import {addUser, getUsers} from "./services/api.service";
-import {deleteUsers, fetchUsers} from "./redux/actions";
-import {newUser} from "./redux/actions/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { addUser, getUsers } from "./services/api.service";
+import { deleteUsers, fetchUsers, newUser } from "./redux/actions";
 
 export default function App() {
-    const state = useSelector(state => {
-        const {firstReducer} = state;
-        return firstReducer;
-    })
+    const { users } = useSelector(({firstReducer}) => firstReducer)
 
     const dispatch = useDispatch();
-    const {users} = state;
 
     useEffect(()=> {
         getUsers().then(value => dispatch(fetchUsers(value)))
