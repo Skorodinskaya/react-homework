@@ -1,5 +1,5 @@
 import {DELETE_USERS, GET_USERS} from "../actions";
-import {ADD_USER} from "../actions/actionTypes";
+import {ADD_USER} from "../actions";
 
 export const firstReducer = (state = {users: []}, action) => {
     switch (action.type) {
