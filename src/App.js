@@ -16,7 +16,11 @@ export default function App() {
     return (
         <div>
             {
-                movies.map(value => <div key={value.id}>{value.title}</div>)
+                movies.map(value => <div key={value.id}>
+                    <b>{value.title}</b>:
+                    {value.overview}
+                    <img src={value.backdrop_path} alt="movie photo"/>
+                </div>)
             }
         </div>
     );
