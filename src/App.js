@@ -19,7 +19,6 @@ export default function App() {
                 movies.map(value => <div key={value.id}>
                     <b>{value.title}</b>:
                     {value.overview}
-                    <img src={value.backdrop_path} alt="movie photo"/>
                 </div>)
             }
         </div>
