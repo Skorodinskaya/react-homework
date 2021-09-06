@@ -1,7 +1,7 @@
-import {GET_GENRES, GET_MOVIES} from "./actionTypes";
-import {setGenres, setMovies} from "./actions";
+import {GET_GENRES, GET_MOVIES, GET_PHOTOS} from "./actionTypes";
+import {setGenres, setMovies, getPhotos} from "./actions";
 
-export {GET_MOVIES, setGenres, setMovies, GET_GENRES}
+export {GET_MOVIES, setGenres, setMovies, GET_GENRES, GET_PHOTOS, getPhotos}
 
 // export * from './actions';
 // export * from './actionTypes'
