@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {useHistory} from "react-router";
 
 export default function MovieListCard({value}) {
     const [info, setInfo] = useState([])
@@ -6,6 +7,7 @@ export default function MovieListCard({value}) {
     const movieInfo = () => {
         setInfo(value.overview)
     }
+
     return (
         <div>
             <button onClick={movieInfo}>Details</button>

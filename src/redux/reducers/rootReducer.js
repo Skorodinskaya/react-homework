@@ -1,6 +1,6 @@
 import {GET_GENRES, GET_MOVIES, GET_PHOTOS} from "../actions";
 
-const initialState = {page: null, movies: [], total_pages: null, total_results: null};
+const initialState = {generes: null, page: null, movies: [], total_pages: null, total_results: null};
 
 export const rootReducer = (state = initialState, action) => {
     const {type, payload} = action;
@@ -11,7 +11,7 @@ export const rootReducer = (state = initialState, action) => {
             return {...state, page, movies: results, total_pages, total_results};
 
         case GET_GENRES:
-            return {...state, movies: [...action.payload]};
+            return {...state, generes: [...action.payload]};
 
         case GET_PHOTOS:
             return {...state, movies: [...action.payload]}

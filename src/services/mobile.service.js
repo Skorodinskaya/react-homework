@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://api.themoviedb.org/4/discover/movie'
+const url = 'https://api.themoviedb.org/3/discover/movie?page=4'
 const api = axios.create({
     baseURL: 'url',
     headers: {
@@ -12,15 +12,9 @@ const discoverMovie = async () => {
     const {data} = await api.get(url);
     return data;
 }
-
-const getImages = (photo) => {
-    return fetch(url + '/{movie_id}' + '/images', {
-        method: 'GET',
-            body: JSON.stringify(photo),
-            headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
-        .then (value => value.json())
+const getGeneres = async () => {
+    const {data} = await api.get("https://api.themoviedb.org/3/genre/movie/list");
+    return data;
 }
-export {discoverMovie, getImages}
+
+export {discoverMovie, getGeneres}

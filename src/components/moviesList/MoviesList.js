@@ -1,21 +1,26 @@
 import PosterPreview from "../posterPreview/PosterPreview";
-import MovieInfo from "../movieInfo/MovieInfo";
 import MovieListCard from "../moviesListCard/MoviesListCard";
 import GenreBadge from "../genreBadge/GenreBadge";
+import './moviesList.css'
+import {useHistory} from "react-router";
 
 export default function MoviesList({value}) {
-  return (
-    <div>
-        <div key={value.id}>
-            <b>{value.original_title}</b>:
+    const history = useHistory();
 
-            <PosterPreview value={value}/>
+    const handler = () => history.push('/movies/' + value.id)
 
-            <MovieListCard value={value}/>
+    return (
+        <div onClick={handler} className={'movieTitle'}>
+            <div key={value.id}>
+                <b>{value.original_title}</b>:
 
-            <GenreBadge value={value}/>
+                <PosterPreview value={value}/>
 
+                <MovieListCard value={value}/>
+
+                <GenreBadge value={value}/>
+
+            </div>
         </div>
-    </div>
-  );
+    );
 }

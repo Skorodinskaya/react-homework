@@ -14,10 +14,10 @@ export default function PosterPreview({value}) {
     // }, []);
     //
 
-
+    console.log(value)
     return (
     <div>
-    <img src={value.backdrop_path} alt= 'something'/>
+    <img src={`https://image.tmdb.org/t/p/w200${value.poster_path}`} alt= 'something'/>
 
         {/*{*/}
         {/*    photos.map(value =>  <div key={value.id}>*/}
