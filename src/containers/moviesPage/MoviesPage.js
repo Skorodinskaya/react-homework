@@ -6,7 +6,7 @@ import MoviesList from "../../components/moviesList/MoviesList";
 import './moviesPage.css';
 import Pagination from "../../components/pagination/Pagination";
 
-export default function MoviesPage() {
+export default function MoviesPage({value}) {
     const {movies} = useSelector(({rootReducer}) => rootReducer);
     const dispatch = useDispatch();
 
@@ -20,14 +20,15 @@ export default function MoviesPage() {
     }, []);
 
     return (
-        <>
-
+        <div>
+            <div className={'pagination'}><Pagination value={value}/></div>
             <div className={'wrapper'}>
                 {
                     movies.map(value => <MoviesList value={value}/>)
                 }
             </div>
-
-        </>
+            <br/>
+            <div className={'pagination'}><Pagination value={value}/></div>
+        </div>
     );
 }

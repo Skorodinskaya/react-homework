@@ -4,4 +4,19 @@
     align-items: center;
     justify-content: center;
     column-gap: 80px;
+    min-height: 3500px;
+}
+
+.bothPages {
+    display: flex;
+    column-gap: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.previousPage > button, .nextPage > button {
+    font-size: 30px;
+    width: 200px;
+    background: #ff0296;
 }

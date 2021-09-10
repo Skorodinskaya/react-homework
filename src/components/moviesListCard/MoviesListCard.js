@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {useHistory} from "react-router";
+import Pagination from "../pagination/Pagination";
 
 export default function MovieListCard({value}) {
     const [info, setInfo] = useState([])

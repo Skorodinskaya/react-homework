@@ -17,4 +17,9 @@ const getGeneres = async () => {
     return data;
 }
 
-export {discoverMovie, getGeneres}
+const getDetails = (filmId) => {
+    return fetch(`https://api.themoviedb.org/3/movie/${filmId}?api_key=4bd79d5e6ae0aa054269482c1b7710ec&language=en-US`)
+        .then(value => value.json())
+}
+
+export {discoverMovie, getGeneres, getDetails}
