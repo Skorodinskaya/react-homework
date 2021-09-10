@@ -4,6 +4,7 @@ import {discoverMovie, getGeneres} from "../../services/mobile.service";
 import {setMovies} from "../../redux/actions";
 import MoviesList from "../../components/moviesList/MoviesList";
 import './moviesPage.css';
+import Pagination from "../../components/pagination/Pagination";
 
 export default function MoviesPage() {
     const {movies} = useSelector(({rootReducer}) => rootReducer);

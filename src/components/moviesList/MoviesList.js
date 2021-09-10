@@ -1,8 +1,8 @@
 import PosterPreview from "../posterPreview/PosterPreview";
 import MovieListCard from "../moviesListCard/MoviesListCard";
-import GenreBadge from "../genreBadge/GenreBadge";
 import './moviesList.css'
 import {useHistory} from "react-router";
+import Pagination from "../pagination/Pagination";
 
 export default function MoviesList({value}) {
     const history = useHistory();
@@ -15,10 +15,9 @@ export default function MoviesList({value}) {
                 <b>{value.original_title}</b>:
 
                 <PosterPreview value={value}/>
-
+                <Pagination/>
                 <MovieListCard value={value}/>
 
-                <GenreBadge value={value}/>
 
             </div>
         </div>
